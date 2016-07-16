@@ -3,7 +3,8 @@ program Lib;
 {$MODE Delphi}
 
 uses
-  Forms, Interfaces,
+  Forms,
+  Interfaces,
   main in 'main.pas' {FormMain},
   clientservice in 'clientservice.pas' {FormClientService},
   modify in 'modify.pas' {FormModify},

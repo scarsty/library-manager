@@ -41,7 +41,7 @@ type
 
 var
   FormClientService: TFormClientService;
-  ClientName: Ansistring;
+  ClientName: ansistring;
 
 implementation
 
@@ -57,50 +57,54 @@ end;
 procedure TFormClientService.BitBtn2Click(Sender: TObject);
 begin
   case RadioGroup1.ItemIndex of
-  0 :begin
-    Query2.SQL.Clear;
-    Query2.Close;
-    Query2.SQL.Add('(select book.bno,bname,author,pub,bnum,bonum from book,bonum ');
-    Query2.SQL.Add('where book.bno=bonum.bno and book.bno=''' + Edit1.Text + ''')');
-    Query2.SQL.Add('union (select bno,bname,author,pub,bnum,0 from book ');
-    Query2.SQL.Add('where bno not in (select bno from bonum) and bno=''' + Edit1.Text + ''')');
-    Query2.SQL.Add('order by bno');
-    Query2.Prepare;
-    Query2.Open;
-  end;
-  1: begin
-    Query2.SQL.Clear;
-    Query2.Close;
-    Query2.SQL.Add('(select book.bno,bname,author,pub,bnum,bonum from book,bonum ');
-    Query2.SQL.Add('where book.bno=bonum.bno and bname like''%' + Edit1.Text + '%'')');
-    Query2.SQL.Add('union (select bno,bname,author,pub,bnum,0 from book ');
-    Query2.SQL.Add('where bno not in (select bno from bonum) and bname like''%' + Edit1.Text + '%'')');
-    Query2.SQL.Add('order by bno');
-    Query2.Prepare;
-    Query2.Open;
-  end;
-  2 :begin
-    Query2.SQL.Clear;
-    Query2.Close;
-    Query2.SQL.Add('(select book.bno,bname,author,pub,bnum,bonum from book,bonum ');
-    Query2.SQL.Add('where book.bno=bonum.bno and author like ''%' + Edit1.Text + '%'')');
-    Query2.SQL.Add('union (select bno,bname,author,pub,bnum,0 from book ');
-    Query2.SQL.Add('where bno not in (select bno from bonum) and author like ''%' + Edit1.Text + '%'')');
-    Query2.SQL.Add('order by bno');
-    Query2.Prepare;
-    Query2.Open;
-  end;
-  3 :begin
-    Query2.SQL.Clear;
-    Query2.Close;
-    Query2.SQL.Add('(select book.bno,bname,author,pub,bnum,bonum from book,bonum ');
-    Query2.SQL.Add('where book.bno=bonum.bno and pub like ''%' + Edit1.Text + '%'')');
-    Query2.SQL.Add('union (select bno,bname,author,pub,bnum,0 from book ');
-    Query2.SQL.Add('where bno not in (select bno from bonum) and pub like ''%' + Edit1.Text + '%'')');
-    Query2.SQL.Add('order by bno');
-    Query2.Prepare;
-    Query2.Open;
-  end;
+    0:
+    begin
+      Query2.SQL.Clear;
+      Query2.Close;
+      Query2.SQL.Add('(select book.bno,bname,author,pub,bnum,bonum from book,bonum ');
+      Query2.SQL.Add('where book.bno=bonum.bno and book.bno=''' + Edit1.Text + ''')');
+      Query2.SQL.Add('union (select bno,bname,author,pub,bnum,0 from book ');
+      Query2.SQL.Add('where bno not in (select bno from bonum) and bno=''' + Edit1.Text + ''')');
+      Query2.SQL.Add('order by bno');
+      Query2.Prepare;
+      Query2.Open;
+    end;
+    1:
+    begin
+      Query2.SQL.Clear;
+      Query2.Close;
+      Query2.SQL.Add('(select book.bno,bname,author,pub,bnum,bonum from book,bonum ');
+      Query2.SQL.Add('where book.bno=bonum.bno and bname like''%' + Edit1.Text + '%'')');
+      Query2.SQL.Add('union (select bno,bname,author,pub,bnum,0 from book ');
+      Query2.SQL.Add('where bno not in (select bno from bonum) and bname like''%' + Edit1.Text + '%'')');
+      Query2.SQL.Add('order by bno');
+      Query2.Prepare;
+      Query2.Open;
+    end;
+    2:
+    begin
+      Query2.SQL.Clear;
+      Query2.Close;
+      Query2.SQL.Add('(select book.bno,bname,author,pub,bnum,bonum from book,bonum ');
+      Query2.SQL.Add('where book.bno=bonum.bno and author like ''%' + Edit1.Text + '%'')');
+      Query2.SQL.Add('union (select bno,bname,author,pub,bnum,0 from book ');
+      Query2.SQL.Add('where bno not in (select bno from bonum) and author like ''%' + Edit1.Text + '%'')');
+      Query2.SQL.Add('order by bno');
+      Query2.Prepare;
+      Query2.Open;
+    end;
+    3:
+    begin
+      Query2.SQL.Clear;
+      Query2.Close;
+      Query2.SQL.Add('(select book.bno,bname,author,pub,bnum,bonum from book,bonum ');
+      Query2.SQL.Add('where book.bno=bonum.bno and pub like ''%' + Edit1.Text + '%'')');
+      Query2.SQL.Add('union (select bno,bname,author,pub,bnum,0 from book ');
+      Query2.SQL.Add('where bno not in (select bno from bonum) and pub like ''%' + Edit1.Text + '%'')');
+      Query2.SQL.Add('order by bno');
+      Query2.Prepare;
+      Query2.Open;
+    end;
   end;
   Query2.Fields[0].DisplayLabel := '书号';
   Query2.Fields[1].DisplayLabel := '书名';

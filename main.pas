@@ -41,25 +41,29 @@ uses passadmin, inquire, modify, borrow, passclient, clientservice;
 procedure TFormMain.BitBtn1Click(Sender: TObject);
 begin
   FormPassAdmin.ShowModal;
-  if PassAdmin.Pass = True then FormInquire.ShowModal;
+  if PassAdmin.Pass = True then
+    FormInquire.ShowModal;
 end;
 
 procedure TFormMain.BitBtn2Click(Sender: TObject);
 begin
   FormPassAdmin.ShowModal;
-  if PassAdmin.Pass = True then FormModify.ShowModal;
+  if PassAdmin.Pass = True then
+    FormModify.ShowModal;
 end;
 
 procedure TFormMain.BitBtn3Click(Sender: TObject);
 begin
   FormPassAdmin.ShowModal;
-  if PassAdmin.Pass = True then FormBorrow.ShowModal;
+  if PassAdmin.Pass = True then
+    FormBorrow.ShowModal;
 end;
 
 procedure TFormMain.BitBtn4Click(Sender: TObject);
 begin
   FormPassClient.ShowModal;
-  if PassClient.Pass = True then FormClientService.ShowModal;
+  if PassClient.Pass = True then
+    FormClientService.ShowModal;
 end;
 
 end.

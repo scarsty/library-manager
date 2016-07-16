@@ -30,7 +30,7 @@ type
 var
   FormPassAdmin: TFormPassAdmin;
   Pass: Boolean;
-  PassWord: AnsiString;
+  PassWord: ansistring;
 
 implementation
 
@@ -46,11 +46,13 @@ begin
     if AnsiCompareStr(Password, Edit2.Text) = 0 then
     begin
       Pass := True;
-      showmessage('您好！欢迎使用！');
+      ShowMessage('您好！欢迎使用！');
     end
-    else showmessage('您的密码信息有误！');
+    else
+      ShowMessage('您的密码信息有误！');
   end
-  else showmessage('对不起，没有这个用户！');
+  else
+    ShowMessage('对不起，没有这个用户！');
   Table1.Active := False;
   Close;
 end;

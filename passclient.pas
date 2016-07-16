@@ -47,11 +47,13 @@ begin
     begin
       Pass := True;
       ClientName := Table1.Lookup('cname', Edit1.Text, 'cfname');
-      showmessage(ClientName + '，您好！欢迎使用！');
+      ShowMessage(ClientName + '，您好！欢迎使用！');
     end
-    else showmessage('您的密码信息有误！');
+    else
+      ShowMessage('您的密码信息有误！');
   end
-  else showmessage('对不起，没有这个用户！');
+  else
+    ShowMessage('对不起，没有这个用户！');
   Close;
 end;
 

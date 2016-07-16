@@ -59,8 +59,9 @@ begin
   Table1.Active := True;
   Table1.TableName := 'CLIENT';
   if Table1.Lookup('cname', Edit2.Text, 'cname') = null then
-    showmessage('没有这个用户')
-  else begin
+    ShowMessage('没有这个用户')
+  else
+  begin
     Query2.Close;
     Query2.SQL.Clear;
     Query2.SQL.Add('select book.bno,bname,btime from borrow,book ');
@@ -107,8 +108,9 @@ begin
   Table1.Active := True;
   Table1.TableName := 'CLIENT';
   if Table1.Lookup('cname', Edit1.Text, 'cname') = null then
-    showmessage('没有这个用户')
-  else begin
+    ShowMessage('没有这个用户')
+  else
+  begin
     Query1.Close;
     Query1.SQL.Clear;
     Query1.SQL.Add('select book.bno,bname,btime from borrow,book ');
@@ -125,21 +127,22 @@ begin
 end;
 
 procedure TFormBorrow.BitBtn5Click(Sender: TObject);
-var temp: string;
+var
+  temp: string;
 begin
   //Table1.Active := True;
   //Table1.TableName := 'BOOK';
   //if Table1.Lookup('bname', Edit3.Text, 'bname') = null then
-    //showmessage('没有这本书！')
+  //showmessage('没有这本书！')
   //else begin
-    //Table1.Active := False;
+  //Table1.Active := False;
   try
     Query1.Close;
     Query1.SQL.Clear;
     Query1.SQL.Add('insert into borrow values');
     Query1.SQL.Add('(''' + Edit4.Text + ''',');
     Query1.SQL.Add('''' + Edit1.Text + ''',');
-    Query1.SQL.Add('''' + FormatDateTime('DD-MM月-YY',DATE) + ''')');
+    Query1.SQL.Add('''' + FormatDateTime('DD-MM月-YY', DATE) + ''')');
     Query1.ExecSQL;
   except
     temp := '借书失败，原因可能是以下之一：' + #13 + #13;
@@ -147,19 +150,19 @@ begin
     temp := temp + '2.您所借的书已全部借完；' + #13;
     temp := temp + '3.您输入的书号不存在；' + #13;
     temp := temp + '4.您已经借了这本书。';
-    showmessage(temp);
+    ShowMessage(temp);
   end;
-    Query1.Close;
-    Query1.SQL.Clear;
-    Query1.SQL.Add('select book.bno,bname,btime from borrow,book ');
-    Query1.SQL.Add('where book.bno=borrow.bno ');
-    Query1.SQL.Add('and cname=''' + Edit1.Text + '''');
-    Query1.Prepare;
-    Query1.Open;
-    Query1.Fields[0].DisplayLabel := '书号';
-    Query1.Fields[1].DisplayLabel := '书名';
-    Query1.Fields[2].DisplayLabel := '借出时间';
-    //Label5.Caption := '请按查询按钮刷新';
+  Query1.Close;
+  Query1.SQL.Clear;
+  Query1.SQL.Add('select book.bno,bname,btime from borrow,book ');
+  Query1.SQL.Add('where book.bno=borrow.bno ');
+  Query1.SQL.Add('and cname=''' + Edit1.Text + '''');
+  Query1.Prepare;
+  Query1.Open;
+  Query1.Fields[0].DisplayLabel := '书号';
+  Query1.Fields[1].DisplayLabel := '书名';
+  Query1.Fields[2].DisplayLabel := '借出时间';
+  //Label5.Caption := '请按查询按钮刷新';
   //end;
   //Table1.Active := False;
   //Query1.Post;

@@ -71,7 +71,7 @@ begin
   Query1.Fields[1].DisplayLabel := '书名';
   Query1.Fields[2].DisplayLabel := '借出时间';
   Query1.Fields[3].DisplayLabel := '到期天数';
-  DBEdit10.Text := inttostr(Query1.RecordCount);
+  DBEdit10.Text := IntToStr(Query1.RecordCount);
 end;
 
 procedure TFormInquire.DBEdit4Change(Sender: TObject);
@@ -87,7 +87,7 @@ begin
   Query2.Fields[1].DisplayLabel := '全名';
   Query2.Fields[2].DisplayLabel := '借出时间';
   Query2.Fields[3].DisplayLabel := '到期天数';
-  DBEdit9.Text := inttostr(Query2.RecordCount);
+  DBEdit9.Text := IntToStr(Query2.RecordCount);
 end;
 
 end.

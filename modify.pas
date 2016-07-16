@@ -75,21 +75,24 @@ end;
 procedure TFormModify.ComboBox3Change(Sender: TObject);
 begin
   case ComboBox3.ItemIndex of
-  0: begin
-    Table3.Active := False;
-    Table3.TableName := 'CLIENT';
-    Table3.Active := True;
-  end;
-  1: begin
-    Table3.Active := False;
-    Table3.TableName := 'BOOK';
-    Table3.Active := True;
-  end;
-  2: begin
-    Table3.Active := False;
-    Table3.TableName := 'BORROW';
-    Table3.Active := True;
-  end;
+    0:
+    begin
+      Table3.Active := False;
+      Table3.TableName := 'CLIENT';
+      Table3.Active := True;
+    end;
+    1:
+    begin
+      Table3.Active := False;
+      Table3.TableName := 'BOOK';
+      Table3.Active := True;
+    end;
+    2:
+    begin
+      Table3.Active := False;
+      Table3.TableName := 'BORROW';
+      Table3.Active := True;
+    end;
   end;
 end;
 
@@ -98,8 +101,9 @@ var
   N: integer;
 begin
   if AnsiCompareStr(Edit1.Text, '') = 0 then
-    showmessage('请填写用户名！')
-  else begin
+    ShowMessage('请填写用户名！')
+  else
+  begin
     if AnsiCompareStr(Edit3.Text, Edit4.Text) = 0 then
     begin
       case ComboBox1.ItemIndex of
@@ -108,25 +112,27 @@ begin
       end;
       try
         Table1.InsertRecord([Edit1.Text, Edit2.Text, Edit3.Text, n]);
-        showmessage('已更新！');
+        ShowMessage('已更新！');
       except
-        showmessage('更新失败，可能是用户名已被占用。');
+        ShowMessage('更新失败，可能是用户名已被占用。');
       end;
     end
-    else ShowMessage('密码不一致！');
+    else
+      ShowMessage('密码不一致！');
   end;
 end;
 
 procedure TFormModify.BitBtn3Click(Sender: TObject);
 begin
   if AnsiCompareStr(Edit5.Text, '') = 0 then
-    showmessage('请填写书号！')
-  else begin
+    ShowMessage('请填写书号！')
+  else
+  begin
     try
       Table2.InsertRecord([Edit5.Text, Edit6.Text, SpinEdit1.Value, Edit7.Text, Edit8.Text]);
-      showmessage('已更新！');
+      ShowMessage('已更新！');
     except
-      showmessage('更新失败，可能是书号已被占用。');
+      ShowMessage('更新失败，可能是书号已被占用。');
     end;
   end;
 end;
