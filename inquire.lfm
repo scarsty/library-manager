@@ -1,0 +1,323 @@
+object FormInquire: TFormInquire
+  Left = 1029
+  Height = 407
+  Top = 521
+  Width = 506
+  Caption = 'FormInquire'
+  ClientHeight = 407
+  ClientWidth = 506
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  LCLVersion = '1.6.0.4'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 329
+    Top = 0
+    Width = 506
+    ActivePage = TabSheet1
+    Align = alTop
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = '用户信息'
+      ClientHeight = 303
+      ClientWidth = 498
+      object DBNavigator1: TDBNavigator
+        Left = 0
+        Height = 25
+        Top = 120
+        Width = 430
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 430
+        DataSource = DataSource1
+        Options = []
+        TabOrder = 0
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+      end
+      object DBGrid1: TDBGrid
+        Left = 0
+        Height = 149
+        Top = 154
+        Width = 498
+        Align = alBottom
+        Color = clWindow
+        Columns = <>
+        DataSource = DataSource2
+        TabOrder = 1
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+      end
+      object Panel1: TPanel
+        Left = 0
+        Height = 113
+        Top = 0
+        Width = 425
+        BevelInner = bvLowered
+        BorderStyle = bsSingle
+        ClientHeight = 109
+        ClientWidth = 421
+        TabOrder = 2
+        object Label2: TLabel
+          Left = 146
+          Height = 13
+          Top = 30
+          Width = 65
+          AutoSize = False
+          Caption = '用户全名'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 10
+          Height = 13
+          Top = 70
+          Width = 145
+          AutoSize = False
+          Caption = '可以借书的数量'
+          ParentColor = False
+        end
+        object Label1: TLabel
+          Left = 14
+          Height = 13
+          Top = 30
+          Width = 65
+          AutoSize = False
+          Caption = '用户名'
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 186
+          Height = 13
+          Top = 70
+          Width = 145
+          AutoSize = False
+          Caption = '已经借书的数量'
+          ParentColor = False
+        end
+        object DBEdit3: TDBEdit
+          Left = 106
+          Height = 21
+          Top = 62
+          Width = 45
+          DataField = 'CCBNUM'
+          DataSource = DataSource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object DBEdit2: TDBEdit
+          Left = 218
+          Height = 21
+          Top = 22
+          Width = 121
+          DataField = 'CFNAME'
+          DataSource = DataSource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object DBEdit1: TDBEdit
+          Left = 70
+          Height = 21
+          Top = 22
+          Width = 49
+          DataField = 'CNAME'
+          DataSource = DataSource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+          OnChange = DBEdit1Change
+        end
+        object DBEdit10: TDBEdit
+          Left = 294
+          Height = 21
+          Top = 62
+          Width = 49
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = '书籍信息'
+      ClientHeight = 0
+      ClientWidth = 0
+      ImageIndex = 1
+      object DBGrid2: TDBGrid
+        Left = 0
+        Height = 149
+        Top = 152
+        Width = 490
+        Align = alBottom
+        Color = clWindow
+        Columns = <>
+        DataSource = DataSource4
+        TabOrder = 0
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+      end
+      object DBNavigator2: TDBNavigator
+        Left = 0
+        Height = 25
+        Top = 120
+        Width = 430
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 430
+        DataSource = DataSource3
+        Options = []
+        TabOrder = 1
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+      end
+      object Panel2: TPanel
+        Left = 0
+        Height = 113
+        Top = 0
+        Width = 425
+        BevelInner = bvLowered
+        BorderStyle = bsSingle
+        ClientHeight = 109
+        ClientWidth = 421
+        TabOrder = 2
+        object DBEdit5: TDBEdit
+          Left = 74
+          Height = 21
+          Top = 22
+          Width = 177
+          DataField = 'BNAME'
+          DataSource = DataSource3
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object DBEdit4: TDBEdit
+          Left = 22
+          Height = 21
+          Top = 22
+          Width = 41
+          DataField = 'BNO'
+          DataSource = DataSource3
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+          OnChange = DBEdit4Change
+        end
+        object DBEdit8: TDBEdit
+          Left = 222
+          Height = 21
+          Top = 62
+          Width = 57
+          DataField = 'BNUM'
+          DataSource = DataSource3
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object DBEdit6: TDBEdit
+          Left = 22
+          Height = 21
+          Top = 62
+          Width = 57
+          DataField = 'AUTHOR'
+          DataSource = DataSource3
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object DBEdit7: TDBEdit
+          Left = 90
+          Height = 21
+          Top = 62
+          Width = 121
+          DataField = 'PUB'
+          DataSource = DataSource3
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object DBEdit9: TDBEdit
+          Left = 290
+          Height = 21
+          Top = 62
+          Width = 57
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
+        end
+      end
+    end
+  end
+  object BitBtn1: TBitBtn
+    Left = 360
+    Height = 25
+    Top = 336
+    Width = 75
+    Kind = bkClose
+    TabOrder = 1
+  end
+  object Table1: TSQLQuery
+    FieldDefs = <>
+    Options = []
+    Params = <>
+    left = 8
+    top = 336
+  end
+  object DataSource1: TDataSource
+    DataSet = Table1
+    left = 48
+    top = 336
+  end
+  object DataSource2: TDataSource
+    DataSet = Query1
+    left = 128
+    top = 336
+  end
+  object Query1: TSQLQuery
+    FieldDefs = <>
+    Options = []
+    Params = <>
+    left = 88
+    top = 336
+  end
+  object Table2: TSQLQuery
+    FieldDefs = <>
+    Options = []
+    Params = <>
+    left = 208
+    top = 336
+  end
+  object DataSource3: TDataSource
+    DataSet = Table2
+    left = 248
+    top = 336
+  end
+  object DataSource4: TDataSource
+    DataSet = Query2
+    left = 328
+    top = 336
+  end
+  object Query2: TSQLQuery
+    FieldDefs = <>
+    Options = []
+    Params = <>
+    left = 288
+    top = 336
+  end
+end
